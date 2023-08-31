@@ -7,7 +7,7 @@ export function Header(){
                 <img src={MealLogo} alt="meal-logo" className='header__logo'/>
                 <h1>Meals Planner</h1>
             </div>
-            <div className="header__search">Search</div>
+            <input className="header__search" type='text' placeholder='Search'/>
             <div className="header__account">Account</div>
         </div>
     </header>

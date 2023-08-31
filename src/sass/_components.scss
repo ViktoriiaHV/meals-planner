@@ -16,6 +16,7 @@
   &__logo-wrapper {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   &__logo {
@@ -25,6 +26,23 @@
     margin-right: 1rem;
   }
   &__search {
+    width: 30%;
+    height: 100%;
+    background-color: $color-grey-light;
+    border-radius: 5rem;
+    border: 0;
+    height: 2.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    transition: all 0.2s ease-out;
+
+    &:active, &:focus {
+        border: 0;
+        outline: none;
+        width: 35%;
+      }
   }
   &__account {
   }
