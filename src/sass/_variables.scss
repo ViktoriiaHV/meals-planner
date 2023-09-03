@@ -1,10 +1,14 @@
 // COLORS
 
 $color-white: #fff;
-$color-white-transparent: rgba(255,255,255, .9);
+$color-white-transparent: rgba(255, 255, 255, 0.9);
 
 $color-grey-light: #dcdcdc;
+$color-grey-very-light: #efeeee;
 
+
+$color-primary: rgb(227, 202, 165);
+$color-primary-transparent: rgb(227, 202, 165, 0.8);
 
 // SHADOWS
 $shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.3);
