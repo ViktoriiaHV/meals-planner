@@ -1,7 +1,10 @@
+import { Card } from "./Layout/Card";
 import { ContentPanel } from "./Layout/ContentPanel";
 import { Layout } from "./Layout/Layout";
 import { SidePanel } from "./Layout/SidePanel";
 import { SideNav } from "./components/SideNav";
+
+const cards = new Array(10).fill('test card')
 
 function App() {
   return (
@@ -11,7 +14,10 @@ function App() {
           <SideNav />
           <div>Impressum</div>
         </SidePanel>
-        <ContentPanel>{}</ContentPanel>
+        <ContentPanel>
+         {cards.map(card => <Card>{card}</Card>)}
+         {/* <h3>You have no recipes yet</h3> */}
+        </ContentPanel>
       </Layout>
     </div>
   );

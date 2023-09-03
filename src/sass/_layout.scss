@@ -2,9 +2,8 @@
 
 .app-container {
   display: block;
-  max-height: 85vh;
+  height: 85vh;
   max-width: 90vw;
-  height: 100%;
   background-color: $color-white-transparent;
   box-shadow: $shadow-dark;
   margin: 5rem auto;
@@ -13,36 +12,53 @@
 
 .layout {
   &__wrapper {
-    display: block;
+    display: flex;
+    flex-direction: column;
     height: 100%;
   }
 
   &__main-section {
     display: flex;
     height: 100%;
+    flex: 1;
+    overflow: hidden;
+
   }
 
   &__left {
     flex: 0 15%;
     background-color: $color-primary-transparent;
-    height: 100%;
     padding: 1rem 2rem;
     border-radius: 0 0 0 1rem;
   }
 
   &__right {
     flex: 1;
-    height: 100%;
     padding: 2rem 2.5rem;
     border-radius: 0 0 1rem 0;
+    overflow: auto;
   }
-}
 
-.side-panel {
-  &__wrapper {
+  &__side-panel {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
+
+  &__content-panel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+.card {
+  background-color: $color-white;
+  width: 25rem;
+  height: 20rem;
+  border-radius: 1rem;
 }

@@ -2,6 +2,7 @@
 
 .header {
   display: block;
+  flex: 0;
   height: 9rem;
   background-color: $color-white;
   border-radius: 1rem 1rem 0 0;
@@ -52,7 +53,7 @@
 }
 
 .side-nav {
-  margin: 1rem 0 10rem 0;
+  margin: 2rem .75rem;
 
   &__list {
     list-style: none;
