@@ -6,6 +6,11 @@ import { ReactComponent as StarIcon } from "../images/star-icon.svg";
 export function RecipeCard() {
   const [isFavourite, setIsFavourite] = useState(false);
 
+  function handleOnFavourite(e: React.MouseEvent<SVGSVGElement>) {
+    e.stopPropagation();
+    setIsFavourite(!isFavourite)
+  }
+
   return (
     <div className="recipe-card">
       <img src={recipeImage} alt="" className="recipe-card__image" />
@@ -23,7 +28,7 @@ export function RecipeCard() {
           className={`recipe-card__star-icon ${
             isFavourite && "recipe-card__star-icon--active"
           }`}
-          onClick={() => setIsFavourite(!isFavourite)}
+          onClick={handleOnFavourite}
         />
       </div>
     </div>

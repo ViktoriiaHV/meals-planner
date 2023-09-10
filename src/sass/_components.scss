@@ -138,8 +138,8 @@
 
     &:hover {
       transform: scale(110%);
-      fill: $color-golden;
       stroke: $color-golden;
+      stroke-width: 4;
     }
 
     &:active {

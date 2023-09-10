@@ -16,7 +16,7 @@ function App() {
           <div>Impressum</div>
         </SidePanel>
         <ContentPanel>
-         {cards.map(card => <Card><RecipeCard /></Card>)}
+         {cards.map((card, idx) => <Card key={idx}><RecipeCard /></Card>)}
          {/* <h3>You have no recipes yet</h3> */}
         </ContentPanel>
       </Layout>
