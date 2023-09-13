@@ -8,6 +8,15 @@
   box-shadow: $shadow-dark;
   margin: 5rem auto;
   border-radius: 1rem;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    max-width: 100%;
+    min-height: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
 
 .layout {
@@ -47,16 +56,24 @@
   }
 
   &__content-panel {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.7rem;
-    align-items: center;
-    justify-content: flex-start;
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // gap: 1.7rem;
+    // align-items: center;
+    // justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
+    grid-gap: 2rem;
+    justify-content: center;
+    justify-items: center;
+    padding: initial;
   }
 }
 
 .card {
+  min-width: 20rem;
+  max-width: 25rem;
   background-color: $color-white;
   width: 25rem;
   height: 20rem;
@@ -68,6 +85,11 @@
   &:hover {
     box-shadow: $shadow-dark;
     transform: scale(102%);
+  }
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    max-width: 20rem;
+    width: 20rem;
   }
   
 }

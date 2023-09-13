@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,700&display=swap');
 
+@import "variables";
+
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +16,10 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+  @media only screen and (max-width: $breakpoint-large) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -21,11 +27,14 @@ body {
   font-weight: 400;
   font-size: 1.3rem;
   line-height: 1.6;
-  // color: var(--color-grey-dark-1);
   background-image: url('../images/rachel-park-hrlvr2ZlUNk-unsplash.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  min-height: 100%;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    background-image: none;
+  }
 }
 
 h1 {
@@ -35,6 +44,10 @@ h1 {
   text-transform: uppercase;
   font-family: inherit;
   display: inline-block;
+
+  @media only screen and (max-width: $breakpoint-large) {
+    font-size: 3rem;
+  }
 }
 
 h2 {
