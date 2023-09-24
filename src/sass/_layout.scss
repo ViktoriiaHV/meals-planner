@@ -56,18 +56,7 @@
   }
 
   &__content-panel {
-    // display: flex;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    // gap: 1.7rem;
-    // align-items: center;
-    // justify-content: flex-start;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
-    grid-gap: 2rem;
-    justify-content: center;
-    justify-items: center;
-    padding: initial;
+    // see if component needed
   }
 }
 

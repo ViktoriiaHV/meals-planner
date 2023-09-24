@@ -1,13 +1,17 @@
-import { Card } from "./Layout/Card";
 import { ContentPanel } from "./Layout/ContentPanel";
 import { Layout } from "./Layout/Layout";
 import { SidePanel } from "./Layout/SidePanel";
-import { RecipeCard } from "./components/RecipeCard";
 import { SideNav } from "./components/SideNav";
 // import { db } from "./utils/firebase";
 // import { onValue, ref } from "firebase/database";
-import { RECIPES } from "./constants/recipes";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { Recipe } from "./pages/Recipe";
+import { Recipes } from "./pages/Recipes";
 
 function App() {
   // useEffect(() => {
@@ -23,13 +27,13 @@ function App() {
 
   return (
     <div className="app-container">
-      <Layout>
-        <SidePanel>
-          <SideNav />
-          <div>Impressum</div>
-        </SidePanel>
-        <ContentPanel>
-          <Router>
+      <Router>
+        <Layout>
+          <SidePanel>
+            <SideNav />
+            <div>Impressum</div>
+          </SidePanel>
+          <ContentPanel>
             <Routes>
               <Route
                 path="/list"
@@ -40,23 +44,19 @@ function App() {
                 element={<div>This is your food planner</div>}
               />
               <Route
+                path="/recipe"
+                element={<Recipe />}
+              />
+              <Route
                 path="/"
-                element={
-                  <div>
-                    {RECIPES.map((recipe) => (
-                      <Card key={recipe.id}>
-                        <RecipeCard />
-                      </Card>
-                    ))}
-                  </div>
-                }
+                element={<Recipes />}
               />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
-          </Router>
-          {/* <h3>You have no recipes yet</h3> */}
-        </ContentPanel>
-      </Layout>
+            {/* <h3>You have no recipes yet</h3> */}
+          </ContentPanel>
+        </Layout>
+      </Router>
     </div>
   );
 }

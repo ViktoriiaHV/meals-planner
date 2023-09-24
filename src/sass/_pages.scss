@@ -1,0 +1,48 @@
+@import "variables";
+
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
+  grid-gap: 2rem;
+  justify-content: center;
+  justify-items: center;
+  padding: initial;
+}
+
+.recipe {
+  text-align: center;
+  background-color: $color-primary-transparent;
+  padding: 2rem;
+
+  &__title {
+    line-height: 5rem;
+    margin-bottom: $margin-small;
+    
+    h2 {
+      font-weight: $font-weight-bold;
+      font-size: $font-size-large;
+    }
+  }
+
+  &__image {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  &__toolbar {
+    margin-top: $margin-tiny;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__content {
+    display: flex;
+  }
+}
