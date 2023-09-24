@@ -4,10 +4,25 @@ import { Layout } from "./Layout/Layout";
 import { SidePanel } from "./Layout/SidePanel";
 import { RecipeCard } from "./components/RecipeCard";
 import { SideNav } from "./components/SideNav";
-
-const cards = new Array(10).fill('test card')
+// import { db } from "./utils/firebase";
+// import { onValue, ref } from "firebase/database";
+import { RECIPES } from "./constants/recipes";
 
 function App() {
+
+  
+  
+  // useEffect(() => {
+  //   const fetchData = () => {
+  //     const testRef = ref(db, 'recipes');
+  //     onValue(testRef, (snapshot) => {
+  //       console.log('HERE')
+  //       const data = snapshot.val();
+  //     });
+  //   }
+  //   fetchData();
+  // })
+
   return (
     <div className="app-container">
       <Layout>
@@ -16,7 +31,7 @@ function App() {
           <div>Impressum</div>
         </SidePanel>
         <ContentPanel>
-         {cards.map((card, idx) => <Card key={idx}><RecipeCard /></Card>)}
+         {RECIPES.map((recipe) => <Card key={recipe.id}><RecipeCard /></Card>)}
          {/* <h3>You have no recipes yet</h3> */}
         </ContentPanel>
       </Layout>
