@@ -26,10 +26,20 @@ export function Recipe() {
         <div className="recipe__ingredients">
           <h3>Ingredients</h3>
           <ul>
-            {recipe.ingredients.map(ingredient => <li>{ingredient.name}</li>)}
+            {/* @TODO: add checkbox */}
+            {recipe.ingredients.map((ingredient) => (
+              <li>
+                {`${ingredient.amount} ${ingredient.units} ${ingredient.name}`}
+              </li>
+            ))}
           </ul>
         </div>
-        <div className="recipe__instructions"></div>
+        <div className="recipe__instructions">
+          <h3>Instructions</h3>
+          {recipe.instructions.map((entry, idx) => (
+            <p>{`${idx + 1}. ${entry}`}</p>
+          ))}
+        </div>
       </div>
     </div>
   );

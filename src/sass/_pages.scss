@@ -43,6 +43,25 @@
   }
 
   &__content {
+    margin-top: $margin-small;
+
     display: flex;
+    line-height: 3rem;
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
+  &__ingredients {
+    flex: 1;
+    
+    & > ul > li {
+      padding-left: 2rem;
+      margin-bottom: .5rem;
+      text-transform: lowercase;
+    }
+  }
+
+  &__instructions {
+    flex: 2;
   }
 }
