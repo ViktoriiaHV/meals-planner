@@ -66,9 +66,9 @@
 
     a.active {
       color: $color-white;
-      
+
       &::after {
-        content: '';
+        content: "";
         display: block;
         border: 1px white solid;
       }
@@ -83,7 +83,7 @@
       color: $color-white;
 
       &::after {
-        content: '';
+        content: "";
         display: block;
         border: 1px white solid;
       }
@@ -163,5 +163,40 @@
       fill: $color-golden;
       stroke: $color-golden;
     }
+  }
+}
+
+.checkbox {
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.75rem;
+  height: 1.75rem;
+  transform: translateY(0.3rem);
+  margin-right: 0.5rem;
+}
+
+.btn {
+  border: none;
+  font-family: inherit;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  box-shadow: $shadow-light-small;
+
+  &--small {
+    padding: .2rem .5rem;
+    font-size: 1rem;
+  }
+
+  &--medium {
+    padding: .75rem 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  &--large {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
   }
 }

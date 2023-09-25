@@ -9,5 +9,5 @@ export function Checkbox({
   checked: boolean;
   onChange: () => void;
 }) {
-  return <input type="checkbox" id={id} value={value} checked={checked} />;
+  return <input className="checkbox" type="checkbox" id={id} value={value} checked={checked} onChange={onChange}/>;
 }
