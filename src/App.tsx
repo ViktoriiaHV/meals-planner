@@ -10,7 +10,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { Recipe } from "./pages/Recipe";
+import { RecipeDetail } from "./pages/RecipeDetail";
 import { Recipes } from "./pages/Recipes";
 
 function App() {
@@ -44,8 +44,8 @@ function App() {
                 element={<div>This is your food planner</div>}
               />
               <Route
-                path="/recipe"
-                element={<Recipe />}
+                path="/recipe/:id"
+                element={<RecipeDetail />}
               />
               <Route
                 path="/"

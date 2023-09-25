@@ -1,4 +1,4 @@
-interface Recipe {
+export interface Recipe {
   id: string;
   title: string;
   picture: string;
@@ -16,7 +16,7 @@ interface Ingredient {
 
 export const RECIPES: Recipe[] = [
     {
-     "id": '1',
+     "id": "baked-eggs-with–spicy–chorizo",
      "title": "baked eggs with spicy chorizo",
       "picture": "https://www.gordonramsayrestaurants.com/assets/Uploads/_resampled/CroppedFocusedImage192072050-50-vb698322-Baked-eggs-spicy-chorizo-spinach-crispy-onions-ricotta-1-.jpg",
      "preptime": 30,

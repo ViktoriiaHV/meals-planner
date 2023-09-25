@@ -1,10 +1,17 @@
+import { useParams } from "react-router-dom";
+import { Checkbox } from "../components/Checkbox";
 import { RECIPES } from "../constants/recipes";
 import { ReactComponent as StarIcon } from "../images/star-icon.svg";
 
-const [recipe] = RECIPES;
-console.log(recipe);
+export function RecipeDetail() {
+  const { id } = useParams();
+  const recipe = RECIPES.find((recipe) => recipe.id === id);
 
-export function Recipe() {
+  if(!recipe){
+    //TODO: ADD RECIPE NOT FOUND FALLBACK 
+    return <>'ADD RECIPE NOT FOUND FALLBACK'</>
+  }
+
   return (
     <div className="recipe">
       <header className="recipe__title">
@@ -26,12 +33,20 @@ export function Recipe() {
         <div className="recipe__ingredients">
           <h3>Ingredients</h3>
           <ul>
-            {/* @TODO: add checkbox */}
-            {recipe.ingredients.map((ingredient) => (
-              <li>
-                {`${ingredient.amount} ${ingredient.units} ${ingredient.name}`}
-              </li>
-            ))}
+            {recipe.ingredients.map((ingredient) => {
+              const recipeString = `${ingredient.amount} ${ingredient.units} ${ingredient.name}`;
+              return (
+                <li>
+                  <Checkbox
+                    id={ingredient.name}
+                    value={recipeString}
+                    checked={false}
+                    onChange={() => {}}
+                  />
+                  <label htmlFor={ingredient.name}>{recipeString}</label>
+                </li>
+              );
+            })}
           </ul>
         </div>
         <div className="recipe__instructions">
