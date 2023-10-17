@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import { RecipeDetail } from "./pages/RecipeDetail";
 import { Recipes } from "./pages/Recipes";
+import { ShoppingList } from "./pages/ShoppingList";
 
 function App() {
   // useEffect(() => {
@@ -37,7 +38,7 @@ function App() {
             <Routes>
               <Route
                 path="/list"
-                element={<div>This is your shopping list</div>}
+                element={<ShoppingList />}
               />
               <Route
                 path="/planner"
