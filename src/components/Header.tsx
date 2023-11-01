@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import MealLogo from "../images/meal.png";
+import { Search } from "./Search";
 
 export function Header() {
   return (
@@ -11,7 +12,7 @@ export function Header() {
           </NavLink>
           <h1>Meals Planner</h1>
         </div>
-        <input className="header__search" type="text" placeholder="Search" />
+        <Search />
         <div className="header__account">
           <NavLink to="/account" className="header__link">
             My Account

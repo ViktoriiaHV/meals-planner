@@ -5,7 +5,7 @@ import type RootState from "../store";
 import {
   checkItem,
   removeItem,
-  addItem,
+  addItems,
 } from "../store/shoppingListSlice/shoppingListSlice";
 
 export function ShoppingList() {
@@ -15,7 +15,7 @@ export function ShoppingList() {
   const dispatch = useDispatch();
 
   function handleInputChange(value: string) {
-    dispatch(addItem(value));
+    dispatch(addItems([value]));
   }
 
   return (
@@ -68,7 +68,7 @@ function NewItem({ onNewItem }: { onNewItem: (value: string) => void }) {
     <>
       <input
         autoFocus
-        style={{ marginLeft: "2.1rem", marginRight: '2px' }}
+        style={{ marginLeft: "2.1rem", marginRight: "2px" }}
         type="text"
         value={value}
         onChange={(e) => setValue(e.target.value)}

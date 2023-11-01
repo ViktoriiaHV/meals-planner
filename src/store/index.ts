@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import ShoppingListReducer from "./shoppingListSlice/shoppingListSlice";
+import RecipesReducer from "./recipesSlice/recipesSlice";
 
 // const initialState = {
 //   recipes: [],
@@ -12,6 +13,7 @@ import ShoppingListReducer from "./shoppingListSlice/shoppingListSlice";
 export const store = configureStore({
   reducer: {
     shoppingList: ShoppingListReducer,
+    recipes: RecipesReducer,
   },
 });
 

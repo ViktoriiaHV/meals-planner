@@ -41,11 +41,9 @@ export const shoppingListSlice = createSlice({
   name: "shoppingList",
   initialState,
   reducers: {
-    addItem: (state, action) => {
-      if (state.items.find((item) => item.title === action.payload)) {
-        return;
-      }
-      state.items = state.items.concat(createNewItem(action.payload));
+    addItems: (state, action) => {
+      const itemsToAdd = action.payload.filter((item: string) => !state.items.some(existingItem => existingItem.title === item));
+      state.items = state.items.concat(itemsToAdd.map(createNewItem));
     },
     removeItem: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload);
@@ -63,7 +61,7 @@ export const shoppingListSlice = createSlice({
     },
   },
 });
-export const { addItem, removeItem, checkItem, renameItem } =
+export const { addItems, removeItem, checkItem, renameItem } =
   shoppingListSlice.actions;
 
 export default shoppingListSlice.reducer;

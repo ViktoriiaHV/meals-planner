@@ -5,16 +5,19 @@ import { ReactComponent as StarIcon } from "../images/star-icon.svg";
 import { ReactComponent as BackIcon } from "../images/back-svgrepo-com.svg";
 import { useState } from "react";
 import { Button } from "../components/Button";
+import { useDispatch } from "react-redux";
+import { addItems } from "../store/shoppingListSlice/shoppingListSlice";
+import { RecipeFallback } from "./RecipeFallback";
 
 export function RecipeDetail() {
   const { id } = useParams();
   const recipe = RECIPES.find((recipe) => recipe.id === id);
+  const dispatch = useDispatch();
 
   const [selectedIngredients, setSelectedIngredients] = useState<string[]>([]);
 
   if (!recipe) {
-    //TODO: ADD RECIPE NOT FOUND FALLBACK
-    return <>'ADD RECIPE NOT FOUND FALLBACK'</>;
+    return <RecipeFallback />;
   }
 
   function onSelectHandler(ingredient: string) {
@@ -25,6 +28,13 @@ export function RecipeDetail() {
         return [...prevState, ingredient];
       }
     });
+  }
+
+  function addToShoppingList() {
+    if (selectedIngredients.length > 0) {
+      dispatch(addItems(selectedIngredients));
+      setSelectedIngredients([]);
+    }
   }
 
   return (
@@ -42,7 +52,10 @@ export function RecipeDetail() {
         <p>Preparation time: {recipe.preptime} minutes</p>
         <div className="recipe__action-buttons">
           <Button className="recipe__button">Add to Planner</Button>
-          <Button className="recipe__button">{`Add ${
+          <Button
+            className="recipe__button"
+            onClick={addToShoppingList}
+          >{`Add ${
             selectedIngredients.length > 0 ? "selected" : "all"
           } to Shopping List`}</Button>
           <StarIcon className={`recipe-card__star-icon`} />
