@@ -11,6 +11,7 @@ $color-white-transparent: rgba(255, 255, 255, 0.9);
 
 $color-grey-light: #dcdcdc;
 $color-grey-very-light: #efeeee;
+$color-grey: #7a7a7a;
 
 $color-golden: #ff9800;
 
@@ -22,6 +23,8 @@ $color-primary-transparent: rgb(227, 202, 165, 0.8);
 $shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.3);
 $shadow-light-small: 0 1rem 3rem rgba(0, 0, 0, 0.1);
 $shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+
+$shadow-light-bottom: 0 4px 2px -2px rgba(0, 0, 0, 0.3);
 
 // FONT SIZES
 $font-size-large: 4rem;
