@@ -4,13 +4,11 @@ import { RECIPES, type Recipe } from "../../constants/recipes";
 interface recipesState {
   recipeList: Recipe[], 
   searchKeyword: '',
-  filteredRecipes: Recipe[]
 }
 
 const initialState: recipesState = {
   recipeList: RECIPES,
   searchKeyword: '',
-  filteredRecipes: []
 }
 
 export const recipesSlice = createSlice({

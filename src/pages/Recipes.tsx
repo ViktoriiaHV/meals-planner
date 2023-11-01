@@ -3,13 +3,30 @@ import { Card } from "../Layout/Card";
 import { RecipeCard } from "../components/RecipeCard";
 import { type Recipe } from "../constants/recipes";
 import RootState from "../store";
+import { createSelector } from "@reduxjs/toolkit";
+
+const selectRecipesState = (state: RootState) => state.recipes;
+
+const selectRecipeList = createSelector(
+  selectRecipesState,
+  (recipes) => recipes.recipeList
+);
+const selectRecipeSearch = createSelector(
+  selectRecipesState,
+  (recipes) => recipes.searchKeyword
+);
+
+const selectFilteredRecipes = createSelector(
+  selectRecipeList,
+  selectRecipeSearch,
+  (list, search) => {
+    return list.filter((item) => item.title.toLowerCase().includes(search.toLowerCase()));
+  }
+);
 
 export function Recipes() {
-  const filteredRecipes = useSelector((state: RootState) =>
-    state.recipes.recipeList.filter((recipe) =>
-      recipe.title.includes(state.recipes.searchKeyword)
-    )
-  );
+  const filteredRecipes = useSelector(selectFilteredRecipes);
+
   return (
     <div className="recipes">
       {filteredRecipes.map((recipe: Recipe) => (
