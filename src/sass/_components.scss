@@ -222,6 +222,8 @@
     border: none;
     border-bottom: 1px solid $color-grey-light;
     width: 80%;
+    font-family: inherit;
+    text-transform: uppercase;
 
     &:focus {
       border: none;
