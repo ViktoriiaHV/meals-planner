@@ -13,6 +13,7 @@ import {
 import { RecipeDetail } from "./pages/RecipeDetail";
 import { Recipes } from "./pages/Recipes";
 import { ShoppingList } from "./pages/ShoppingList";
+import { Planner } from "./pages/Planner";
 
 function App() {
   // useEffect(() => {
@@ -42,7 +43,7 @@ function App() {
               />
               <Route
                 path="/planner"
-                element={<div>This is your food planner</div>}
+                element={<Planner />}
               />
               <Route
                 path="/recipe/:id"
